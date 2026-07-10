@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="wrapper/main"/>
+	<classpathentry kind="lib" path="vd-tool-wrapper.jar"/>
+	<classpathentry kind="output" path="obj"/>
+</classpath>

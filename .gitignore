@@ -1,0 +1,6 @@
+vd-tool-wrapper.jar
+.vscode/*
+obj/*
+bin/*
+vd-tool
+graalvm-jdk*
