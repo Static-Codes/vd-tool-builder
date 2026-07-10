@@ -44,3 +44,6 @@ VDTB supports two build options.
 
 * `vd-tool` | *Copyright (c) 2022 Ryan Harter*
 * `Android Studio/AOSP code` | *Copyright (C) 2015 The Android Open Source Project*
+
+## License
+* License eligibility will be determined shortly. Once this determination has been made, this document will be updated.
