@@ -24,19 +24,45 @@ VDTB supports two build options.
 
 
 * **Cons:**
-  * Uses more RAM compared to Option 2.
+  * Uses more RAM at runtime compared to Option 2.
 
+#### Usage:
+```bash
+git clone https://github.com/Static-Codes/vd-tool-builder/
+cd vd-tool-builder
+chmod +x build.sh
+./build.sh
+```
+
+#### Running:
+```bash
+java -jar path/to/vd-tool-wrapper.jar -c -in path/to/input.svg -out path/to/output/directory
+```
 
 
 ### Option 2: Native Image (uses GraalVM)
 
 * **Pros:**
   * Doesn't require Java 21.X to be installed (after compilation is complete).
-  * Uses less RAM compared to Option 1.
+  * Uses less RAM at runtime compared to Option 1.
 
 
 * **Cons:**
   * Uses around 60% more disk space for the compiled binary compared to Option 1.
+
+
+#### Compiling:
+```bash
+git clone https://github.com/Static-Codes/vd-tool-builder/
+cd vd-tool-builder
+chmod +x run.sh
+./run.sh
+```
+
+#### Running:
+```bash
+./path/to/vdtool-wrapper -c -in path/to/input.svg -out path/to/output/directory
+```
 
 ---
 
