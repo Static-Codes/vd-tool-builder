@@ -19,26 +19,24 @@ VDTB supports two build options.
 ### Option 1: JAR Only
 
 * **Pros:**
-* Compiles a Java Runtime Executable that can be executed on any system with Java 21.X installed.
-* Outputs only one file.
+  * Compiles a Java Runtime Executable that can be executed on any system with Java 21.X installed.
+  * Outputs only one file.
 
 
 * **Cons:**
-* Uses more RAM compared to Option 2.
+  * Uses more RAM compared to Option 2.
 
 
 
 ### Option 2: Native Image (uses GraalVM)
 
 * **Pros:**
-* Doesn't require Java 21.X to be installed (after compilation is complete).
-* Uses less RAM compared to Option 1.
+  * Doesn't require Java 21.X to be installed (after compilation is complete).
+  * Uses less RAM compared to Option 1.
 
 
 * **Cons:**
-* Uses around 60% more disk space for the compiled binary compared to Option 1.
-
-
+  * Uses around 60% more disk space for the compiled binary compared to Option 1.
 
 ---
 
