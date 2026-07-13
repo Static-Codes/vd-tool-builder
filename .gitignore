@@ -4,3 +4,4 @@ obj/*
 bin/*
 vd-tool
 graalvm-jdk*
+dummy.svg

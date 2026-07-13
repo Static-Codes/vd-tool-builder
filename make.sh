@@ -35,11 +35,30 @@ GRAAL_VM_JDK_PARENT_DIR=$(find . -name graalvm-jdk-21.* | head -n 1) || {
 }
 
 GRAAL_VM_JDK_NATIVE_IMAGE_BINARY="$GRAAL_VM_JDK_PARENT_DIR/bin/native-image"
+GRAAL_VM_JDK_JAVA_BINARY="$GRAAL_VM_JDK_PARENT_DIR/bin/java"
 
-mkdir $OUTPUT_DIR || { echo "Unable to create output directory for the compiled executable" && return; }
+
+mkdir $OUTPUT_DIR || echo "Output directory already exists"
+
+CONFIG_DIR="native-config"
+mkdir -p $CONFIG_DIR || echo "Config directory already exists."
+
+
+###################### DO NOT REMOVE ##################################
+# echo "Running the GraalVM Tracing Agent to map internal JNI dependencies..."
+# Running the GraalVM bundled JVM with the tracing agent attached.
+# This will properly resolve AWT and any other required dependencies.
+# $GRAAL_VM_JDK_JAVA_BINARY \
+#     -agentlib:native-image-agent=config-output-dir=$CONFIG_DIR \
+#     -Djava.awt.headless=true \
+#     -jar vd-tool-wrapper.jar \
+#     -c -in "dummy.svg" -out "dummy_out" && echo "Agent run completed (errors here are fine as long as config is generated)"
+
+echo "Compiling the native image..."
 $GRAAL_VM_JDK_NATIVE_IMAGE_BINARY \
     -jar vd-tool-wrapper.jar \
     -o $OUTPUT_DIR/vdtool-wrapper \
+    -H:ConfigurationFileDirectories=$CONFIG_DIR \
     --no-fallback \
     --enable-url-protocols=http,https \
     --initialize-at-build-time=com.google.common.jimfs.SystemJimfsFileSystemProvider

@@ -1,0 +1,10 @@
+[
+{
+  "name":"java.awt.GraphicsEnvironment",
+  "methods":[{"name":"isHeadless","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.System",
+  "methods":[{"name":"load","parameterTypes":["java.lang.String"] }]
+}
+]
